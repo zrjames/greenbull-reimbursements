@@ -1,37 +1,31 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<link rel="stylesheet"
-			href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
-		<meta charset="ISO-8859-1">
-		<title>Pet Sanctuary</title>
-		
-		<link rel="stylesheet" 
-			href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
-			integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
-			crossorigin="anonymous">
-	</head>
-	
-	<body>
-		<!--  CHANGE THIS CODE LATER -->
-		<a href="http://localhost:8080/PetsExample/html/Register.html" 
-			class="btn-primary" id="register-form-link">Register</a>
-			
-		<form id = "login-form" method="POST" action="Login.do" role="form">
-			<div class="form-group">
-				<input type="text" name="name" id="name" class="form-control" 
-					placeholder="Pet's name" value="">
-			</div>
-			
-			<div class="form-group">
-				<input type="text" name="type" id="type" class="form-control" 
-					placeholder="Pet's type" value="">
-			</div>
-			
-			<div class="form-group">
-				<!-- This is the button where we send the request -->
-				<input type="Submit" class="form-control btn-primary" id="LoginButton" value="Login">
-			</div>
-		</form>
-	</body>
+
+<head>
+    <title>Greenbull Login</title>
+    <link rel="stylesheet" type="text/css" href="login.css">
+</head>
+
+<body class="gradiant">
+    <div>
+        <img id="Greenbull" src="Green Bull.png" alt="GreenBull" height=120 width=200>
+        <img id="Greenbull" class = "Greenbull2" src="Green Bull2.png" alt="GreenBull" height=120 width=200>
+    </div>
+    <form id="login-form" method="POST" action="" role="form" autocomplete="off">
+        <h2>Welcome to TRMS!</h2>
+        <br>
+        <div class="form-group">
+            <input type="text" name="username" id="username" placeholder="Username" value="" size="35">
+        </div>
+        <div class="form-group">
+            <input type="text" name="password" id="password" placeholder="Password" value="" size="35">
+        </div>
+        <br>
+        <div class="form-group">
+
+            <input type="Submit" id="LoginButton" value="Login">
+        </div>
+    </form>
+</body>
+
 </html>
