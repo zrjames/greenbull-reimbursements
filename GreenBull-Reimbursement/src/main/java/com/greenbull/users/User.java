@@ -9,8 +9,8 @@ public class User {
 	/*
 	 * Fields
 	 */
-	
-	
+
+
 	/*from our Database:
 	USER_ID INTEGER PRIMARY KEY NOT NULL,
     USER_NAME VARCHAR(20) UNIQUE NOT NULL,
@@ -27,7 +27,10 @@ public class User {
 	String username;
 	String password;
 	int id;
+	int type_of_id;
 	
+	String firstName;
+	String lastName;
 	/*
 	 * Constructor
 	 */
@@ -40,11 +43,24 @@ public class User {
 	 * Getters/Setters
 	 */
 	
-	public User(String username, String password, int id) {
+	public User(String username, String password, int id, int type_of_id, String firstName, String lastName) {
 		super();
 		this.username = username;
 		this.password = password;
 		this.id = id;
+		this.type_of_id = type_of_id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+	}
+
+
+	public int getType_of_id() {
+		return type_of_id;
+	}
+
+
+	public void setType_of_id(int type_of_id) {
+		this.type_of_id = type_of_id;
 	}
 
 
@@ -76,6 +92,32 @@ public class User {
 	public void setId(int id) {
 		this.id = id;
 	}
-	
-	
+
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+
+	public String getLastName() {
+		return lastName;
+	}
+
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+
+	@Override
+	public String toString() {
+		return "User [username=" + username + ", password=" + password + ", id=" + id + ", type_of_id=" + type_of_id
+				+ ", firstName=" + firstName + ", lastName=" + lastName + "]";
+	}
+
 }

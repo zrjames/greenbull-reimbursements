@@ -1,33 +1,42 @@
 body{
-	height: 100vh;
-	margin: 0px;
-	width: 100vw;
-	background: linear-gradient(rgb(217, 255, 212), green);
+    height: 100vh;
+    margin: 0px;
+    width: 100vw;
+    background: linear-gradient(rgb(217, 255, 212), green);
 }
 
 #Logout{
-	display: inline-block;
-	
+    display: inline-block;
 }
-
 
 .button{
-	 float: right;
-	 padding: 15px 32px;
-	 font-size: 16px;
-	 background-color: darkgreen;
-	 color: white;
-	 cursor: pointer;
-	 width: 175px;
-	
+     float: right;
+     padding: 15px 32px;
+     font-size: 16px;
+     background-color: darkgreen;
+     color: white;
+     cursor: pointer;
+     width: 175px;
 }
+
+.Greenbull2 {
+    display: inline-block;
+    padding-top: 60px;
+    padding-right: 25px;
+    padding-left: 25px;
+}
+
+#Greenbull {
+    float: right;
+}
+
 .exbutton{
-	 padding: 15px 32px;
-	 font-size: 16px;
-	 background-color: darkgreen;
-	 color: white;
-	 cursor: pointer;
-	 width: 175px;
+     padding: 15px 32px;
+     font-size: 16px;
+     background-color: darkgreen;
+     color: white;
+     cursor: pointer;
+     width: 200px;
 }
 
 .footer {
@@ -36,13 +45,33 @@ body{
    bottom: 0;
    width: 100%;
    background-color: white;
-   color: darkgreen;
-   text-align: left;
-   height: 5%
+   color: black;
+   text-align: center;
+   height: 3%
+   text-align: center;
 }
 
 .Info_table {
-	text-align: center;
-	padding-top: 15px;
-	border-spacing: 15px;
+    text-align: center;
+    padding-top: 15px;
+    border-spacing: 15px;
+}
+
+table {
+    width:70%;
+    margin-left: 15%;
+    margin-right:15%;
+    border-collapse: collapse;
+}
+
+tr:nth-child(even) {background-color: #ffffff;}
+
+table, th, td {
+    border: 1px solid black;
+    padding: 15px;
+}
+
+th{
+    background-color: darkgreen;
+    color: white;
 }

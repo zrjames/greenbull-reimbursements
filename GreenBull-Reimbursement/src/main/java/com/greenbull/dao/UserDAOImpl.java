@@ -27,9 +27,12 @@ public class UserDAOImpl implements UserDAO {
 	
 	@Override
 	public User readUserByUsername(String username) {
+		
+		System.out.println("in readUserByUsername");
 		//prep our new class instance to null
 		User user = null;
 		
+	
 		//connect to database
 		try(Connection conn = DriverManager.getConnection(url, uname, password)){
 			//SQL statement - should get one data entry
@@ -41,7 +44,8 @@ public class UserDAOImpl implements UserDAO {
 			
 			//fill our instance with the db data
 			while(rs.next()) {
-				user = new User(rs.getString("USER_NAME"), rs.getString("PASS_WORD"), rs.getInt("USER_ID"));
+				System.out.println("Got some stuff from the data base");
+				user = new User(rs.getString("USER_NAME"), rs.getString("PASS_WORD"), rs.getInt("USER_ID"), rs.getInt("TYPE_OF_ID"), rs.getString("FIRST_NAME"), rs.getString("LAST_NAME"));
 			}
 			
 		} catch (SQLException e) {

@@ -15,6 +15,9 @@ public class MasterServlet extends HttpServlet{
 		//for getting info to the XHR in javascript
 		@SuppressWarnings("unused")
 		String jsonStuff = RequestHelper.process(request, response);
+		
+		//test time
+		System.out.println("GET on MasterServlet: " + jsonStuff);
 	}
 	
 	@Override
@@ -27,7 +30,7 @@ public class MasterServlet extends HttpServlet{
 		String targetURL = RequestHelper.process(request, response);
 
 		//test time
-				System.out.println(targetURL);
+		System.out.println(targetURL);
 				
 		//redirect, forward, printwrite
 		request.getRequestDispatcher(targetURL).forward(request, response);

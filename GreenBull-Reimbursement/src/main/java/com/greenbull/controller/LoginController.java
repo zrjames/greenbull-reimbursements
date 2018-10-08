@@ -1,6 +1,7 @@
 package com.greenbull.controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import com.greenbull.dao.UserDAOImpl;
 import com.greenbull.users.User;
@@ -24,27 +25,38 @@ public class LoginController {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		
-		//test time
-		System.out.println(username);
-		
 		//prepare object for accessing the database
 		UserDAOImpl userDaoImpl = new UserDAOImpl();
 		//prep for a new user object
 		User user = new User();
-		
 		//return user by accessing it's info from the database
 		user = userDaoImpl.readUserByUsername(username);
-		
-		//test time
-		System.out.println(user);
 		
 		//if our name and password equals the one in the DB,
 		//	make a session and go to Menu
 		if( username.equals(user.getUsername()) && password.equals(user.getPassword()) ) {
-			//store an object in the session
-			request.getSession().setAttribute("User", user);
 
-			return "/html/Employee.html";
+			HttpSession session=request.getSession(); 
+			
+			//store the user object in the session
+			session.setAttribute("User", user);
+			
+			//set which page we go to based on the type of user logging in
+			switch(user.getType_of_id()) {
+				case 0:
+				default:
+					return "/html/Employee.html";
+				case 1:
+					return "/html/directsupervisor.html";
+				case 2:
+					return "/html/departmentManager.html";
+				case 3:
+					return "/html/Benco.html";
+				case 4:
+					return "/html/bencoSupervisor.html";
+			}
+			
+			
 		}
 		//otherwise, reload login
 		else {

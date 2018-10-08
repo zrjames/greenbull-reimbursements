@@ -3,9 +3,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Reimbursement Form</title>
-<link rel="stylesheet" type="text/css" href="../css/view.css" media="all">
+<link rel="stylesheet" type="text/css" href="../css/view.css"
+	media="all">
 <script type="text/javascript" src="../js/view.js"></script>
 <script type="text/javascript" src="../js/calendar.js"></script>
+<script src="jquery-3.3.1.min.js"></script>
 </head>
 <body id="main_body" class="gradiant">
 
@@ -15,8 +17,8 @@
 		<h1>
 			<a>Reimbursement Form</a>
 		</h1>
-		<form id="form_29462" class="appnitro" enctype="multipart/form-data"
-			method="post" action="">
+		<form method="POST" id="form_29462" class="appnitro"
+			 action="Form.do">
 			<div class="form_description">
 				<h2>Reimbursement Form</h2>
 				<p></p>
@@ -24,8 +26,9 @@
 			<ul>
 
 				<li id="li_1"><label class="description" for="element_1">Name
-				</label> <span> <input id="FirstName" name="fname"
-						class="element text" maxlength="255" size="8" value="" /> <label>First</label>
+				</label> <span> <!--   <input id="FirstName" name="fname" type="text" class="element text" maxlength="255" size="8" value="" />--> 
+						<input type="text" id="fname" name="fname" value="" size="8">
+						<label>First</label>
 				</span> <span> <input id="LastName" name="lname"
 						class="element text" maxlength="255" size="14" value="" /> <label>Last</label>
 				</span></li>
@@ -34,18 +37,19 @@
 					<p></p>
 				</li>
 				<li id="li_4"><label class="description" for="element_4">Date
-						of event </label> <span> <input id="element_4_1" name="element_4_1"
+						of event </label> <span> <input id="element_4_1" name="Month" 
 						class="element text" size="2" maxlength="2" value="" type="text">
 						/ <label for="element_4_1">MM</label>
-				</span> <span> <input id="element_4_2" name="element_4_2"
+				</span> <span> <input id="element_4_2" name="Day"
 						class="element text" size="2" maxlength="2" value="" type="text">
 						/ <label for="element_4_2">DD</label>
-				</span> <span> <input id="element_4_3" name="element_4_3"
+				</span> <span> <input id="element_4_3" name="Year"
 						class="element text" size="4" maxlength="4" value="" type="text">
 						<label for="element_4_3">YYYY</label>
 				</span> <span id="calendar_4"> <img id="cal_img_4"
 						class="datepicker" src="../Images/calendar.gif" alt="Pick a date.">
-				</span> <script type="text/javascript">
+				</span> 
+				<script type="text/javascript">
 					Calendar.setup({
 						inputField : "element_4_3",
 						baseField : "element_4",
@@ -55,77 +59,75 @@
 						onSelect : selectDate
 					});
 				</script></li>
-				<li id="li_5"><label class="description" for="element_5">Type
-						of Event </label>
-					<div>
-						<select class="element select medium" id="element_5"
-							name="element_5">
-							<option value="" selected="selected"></option>
-							<option value="1">University Course</option>
-							<option value="2">Seminar</option>
-							<option value="3">Certification Preparation Class</option>
-							<option value="4">Certification</option>
-							<option value="5">Technical Training</option>
-							<option value="6">Other</option>
 
-						</select>
-	</div>
-					<p class="guidelines" id="guide_5">
-						<small>If event is a university course be sure to fill in
-							course name and grade.</small>
-					</p></li>
-					<li id="li_8"><label class="description" for="Grade">Grade
-				</label>
-					<div>
-						<input id="Grade" name="Grade" class="element text medium"
-							type="text" maxlength="255" value="" />
-					</div></li>
+		  
+				<table>
+					<tr>
+						<th><label for="id_application_method">Application
+								method:</label></th>
+						<td><select name="application_method"
+							id="id_application_method">
+								<option value="">Pick first</option>
+								<option value="University Course">University Course</option>
+								<option value="Seminar">Seminar</option>
+								<option value="3">Certification Preparation Class</option>
+								<option value="4">Certification</option>
+								<option value="5">Technical Training</option>
+								<option value="6">Other</option>
+						</select></td>
+					</tr>
+
+					<tr>
+						<th><label for="id_A">Course Name:</label></th>
+						<td><input id="id_A" name="CourseName" type="text"
+							maxlength="255" value="" placeholder="Required for Course" /></td>
+					</tr>
+
+					<tr>
+						<th><label for="id_B">Grade:</label></th>
+						<td><input id="id_B" name="Grade" 
+							type="text" maxlength="255" value="" placeholder="Required for Course" /></td>
+					</tr>
+				</table>
+
+
 				<li id="li_2"><label class="description" for="element_2">Address
 				</label>
-
 					<div>
-						<input id="element_2_1" name="element_2_1"
+						<input id="element_2_1" name="Street_Address"
 							class="element text large" value="" type="text"> <label
 							for="element_2_1">Street Address</label>
 					</div>
 
-					<div>
-						<input id="element_2_2" name="element_2_2"
-							class="element text large" value="" type="text"> <label
-							for="element_2_2">Address Line 2</label>
-					</div>
-
 					<div class="left">
-						<input id="element_2_3" name="element_2_3"
+						<input id="element_2_3" name="City"
 							class="element text medium" value="" type="text"> <label
 							for="element_2_3">City</label>
 					</div>
 
 					<div class="right">
-						<input id="element_2_4" name="element_2_4"
+						<input id="element_2_4" name="State"
 							class="element text medium" value="" type="text"> <label
 							for="element_2_4">State / Province / Region</label>
 					</div>
 
 					<div class="left">
-						<input id="element_2_5" name="element_2_5"
+						<input id="element_2_5" name="ZipCode"
 							class="element text medium" maxlength="15" value="" type="text">
 						<label for="element_2_5">Postal / Zip Code</label>
 					</div></li>
 				<li id="li_7"><label class="description" for="element_7">Description
 						and Work Justification </label>
 					<div>
-						<textarea id="element_7" name="element_7"
+						<textarea id="element_7" name="WorkJustification"
 							class="element textarea medium"></textarea>
 					</div></li>
-				
+
 				<li id="li_9"><label class="description" for="element_9">Cost
 				</label> <span class="symbol">$</span> <span> <input id="element_9_1"
-						name="element_9_1" class="element text currency" size="10"
+						name="Cost" class="element text currency" size="10"
 						value="" type="text" /> . <label for="element_9_1">Dollars</label>
-				</span> <span> <input id="element_9_2" name="element_9_2"
-						class="element text" size="2" maxlength="2" value="" type="text" />
-						<label for="element_9_2">Cents</label>
+
 				</span></li>
 				<li id="li_10"><label class="description" for="WorkTimeMissed">Work
 						time missed </label>
@@ -148,13 +150,15 @@
 				<li id="li_11"><label class="description" for="element_11">Attachments
 				</label>
 					<div>
-						<input id="element_11" name="element_11" class="element file"
+						<input id="element_11" name="Attachments" class="element file"
 							type="file" />
 					</div></li>
 
 				<li class="buttons"><input type="hidden" name="form_id"
-					value="29462" /> <input id="saveForm" class="button_text"
-					type="submit" name="submit" value="Submit" /></li>
+					value="29462" /> 
+					<!--  <input id="saveForm" class="button_text" type="submit" name="submit" value="Submit" /> -->
+					<input type="Submit" class="form-control btn-primary" id="saveForm" type="submit" name="submit" value="Submit">
+				</li>
 			</ul>
 		</form>
 	</div>
